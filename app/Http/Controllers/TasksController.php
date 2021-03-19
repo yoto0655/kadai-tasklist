@@ -51,11 +51,9 @@ class TasksController extends Controller
         
         $request->validate([
             'status' => 'required|max:10',
-        ]);
-        
-        $request->validate([
             'content' => 'required|max:255',
         ]);
+        
         
          // メッセージを作成
         $task = new Task;
@@ -113,9 +111,6 @@ class TasksController extends Controller
         
         $request->validate([
             'status' => 'required|max:10',
-        ]);
-        
-        $request->validate([
             'content' => 'required|max:255',
         ]);
         
