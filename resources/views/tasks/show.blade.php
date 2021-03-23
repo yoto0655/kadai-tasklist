@@ -2,6 +2,9 @@
 
 @section('content')
 
+    @if (Auth::check())
+        {{ Auth::user()->name }}
+
        <h1>id = {{ $task->id }} の内容詳細ページ</h1>
 
        <table class="table table-bordered">
@@ -18,7 +21,7 @@
                 <td>{{ $task->content }}</td>
             </tr>
         </table>
-        
+    
         {{-- 内容編集ページへのリンク --}}
         {!! link_to_route('tasks.edit', 'この内容を編集', ['task' => $task->id], ['class' => 'btn btn-light']) !!}
 
@@ -26,5 +29,6 @@
         {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
             {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
         {!! Form::close() !!}
-        
+     @endif
+     
 @endsection

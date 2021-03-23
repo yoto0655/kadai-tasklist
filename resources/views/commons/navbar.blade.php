@@ -8,7 +8,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="nav-bar">
-          
+            <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
                 @if (Auth::check())
                     {{-- ログアウトへのリンク --}}
